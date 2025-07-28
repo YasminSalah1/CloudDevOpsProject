@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = 'yasminsalah321/cloud-devops-app'
+    }
+
+    stages {
+        stage('Clone Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/YasminSalah1/CloudDevOpsProject.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build("${IMAGE_NAME}")
+                }
+            }
+        }
+
+        stage('Push to DockerHub') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS')]) {
+                    script {
+                        docker.withRegistry('', 'dockerhub-creds') {
+                            docker.image("${IMAGE_NAME}").push('latest')
+                        }
+                    }
+                }
+            }
+        }
+
+        // Optional: Add more stages like Deploy to K8s or Run Tests
+    }
+}
+
