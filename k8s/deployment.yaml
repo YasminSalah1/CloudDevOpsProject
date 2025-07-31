@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ivolve-container
-        image: yasminsalah321/ivolve-node-app:latest
+        image: yasminsalah321/ivolve-flask-app:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 5000
 
