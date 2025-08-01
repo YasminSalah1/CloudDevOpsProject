@@ -140,7 +140,8 @@ ansible-inventory -i inventory/myinventory.aws_ec2.yml --graph
 ansible-playbook -i inventory/myinventory.aws_ec2.yml jenkins-playbook.yml
 
 ```
-![iScreen Shoter - 20250728033147950](https://github.com/user-attachments/assets/b2800746-cf6e-4e26-90bf-93f06fd7b045)
+![iScreen Shoter - 20250728004807534](https://github.com/user-attachments/assets/4563daf5-8291-4dbb-a446-228c170f2d4c)
+
 
 
 ## 🔁 5. Continuous Integration with Jenkins
@@ -152,8 +153,13 @@ ansible-playbook -i inventory/myinventory.aws_ec2.yml jenkins-playbook.yml
 3. Removing local image
 4. Updating Kubernetes manifests
 5. Pushing updated code to GitHub
-![iScreen Shoter - 20250727232746466](https://github.com/user-attachments/assets/624560ed-cafa-43de-938c-766d4cca817b)
-![iScreen Shoter - 20250728033147950](https://github.com/user-attachments/assets/b2800746-cf6e-4e26-90bf-93f06fd7b045)
+   
+![iScreen Shoter - 20250802012507775](https://github.com/user-attachments/assets/4451e232-731c-4667-9f2f-f46799fa96c7)
+
+
+
+![iScreen Shoter - 20250802015958294](https://github.com/user-attachments/assets/f0ea4e6f-4830-4572-a571-277a2cb7ed7d)
+
 
 ## 🚀 6. Continuous Deployment with ArgoCD
 
@@ -163,3 +169,5 @@ ansible-playbook -i inventory/myinventory.aws_ec2.yml jenkins-playbook.yml
 kubectl apply -f argocd/app-argocd.yaml
 
 ```
+
+
